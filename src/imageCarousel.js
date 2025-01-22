@@ -40,6 +40,7 @@ const imageCarousel = (function(){
 
             portrait.style.height = imagesNodeList[currentPosition].clientHeight+"px"
             imageSet.style.bottom = bottomOffset+"px"
+            addFilledDots(currentPosition)
             return
         }
         //to jump between images if needed
