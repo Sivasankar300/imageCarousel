@@ -28,7 +28,7 @@ const imageCarousel = (function(){
         portrait.style.height = currentImageHeight+"px";
         addFilledDots(currentPosition)
     }
-
+    setInterval(nextImage,5000)
     const nextButton = document.querySelector("#next")
     nextButton.addEventListener("click",nextImage)
     function nextImage(){
@@ -86,13 +86,14 @@ const imageCarousel = (function(){
 
     }
 
+    //Clicking the dots jumps to it's image
     navigationDotsDiv.addEventListener("click",navigationDotsFn)
     function navigationDotsFn(event){
         //clicking the dots will jump to that image
         const idOfElement = event.target.id;
         const imageNo = parseInt(idOfElement.slice(5,6));
-        jumpToImage(imageNo)
         currentPosition = imageNo;
+        jumpToImage(imageNo)
         portrait.style.height = imagesNodeList[currentPosition].clientHeight+"px"
 
     }
@@ -105,6 +106,8 @@ const imageCarousel = (function(){
         const selectedImg = document.querySelector(`#image${index}`)
         selectedImg.setAttribute("src",filledCircleIcon)
     }
+
+    
 
 
 
