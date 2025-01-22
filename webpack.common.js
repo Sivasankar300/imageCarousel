@@ -20,7 +20,14 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
-      //HTMl & JS Image loaders not added
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
     ],
 }
 };
